@@ -10,11 +10,18 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var cardImageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
-
-
+    
+    @IBAction func drawCardButtonPressed(_ sender: UIButton) {
+        let card =  DeckController.drawOneCard()
+        
+        let image = DeckController.getImage(card!.image)
+        cardImageView.image = image
+    }
+    
 }
 
